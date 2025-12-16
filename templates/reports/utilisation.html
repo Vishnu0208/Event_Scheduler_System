@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card p-4">
+<h4>Resource Utilisation Report</h4>
+
+<form method="post" class="row g-2 mb-4">
+  <div class="col">
+    <input type="datetime-local" name="start" class="form-control">
+  </div>
+  <div class="col">
+    <input type="datetime-local" name="end" class="form-control">
+  </div>
+  <div class="col">
+    <button class="btn btn-primary w-100">Generate</button>
+  </div>
+</form>
+
+{% for r, h in data %}
+  <div class="card p-3">
+    <strong>{{ r }}</strong> – {{ h }} hours
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}

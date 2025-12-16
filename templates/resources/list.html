@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+  <h4>Resources</h4>
+  <a href="/resources/add" class="btn btn-success">➕ Add Resource</a>
+</div>
+
+{% for r in resources %}
+<div class="card p-3">
+  <strong>{{ r.name }}</strong>
+  <span class="badge bg-secondary">{{ r.type }}</span>
+</div>
+{% endfor %}
+
+{% endblock %}

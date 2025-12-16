@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+  <h4>Events</h4>
+  <a href="/events/add" class="btn btn-primary">➕ Add Event</a>
+</div>
+
+{% for e in events %}
+<div class="card p-3">
+  <h5>{{ e.title }}</h5>
+  <p class="text-muted">
+    {{ e.start_time }} → {{ e.end_time }}
+  </p>
+  <p>{{ e.description }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}
